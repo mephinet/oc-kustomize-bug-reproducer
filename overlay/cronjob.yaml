@@ -1,0 +1,16 @@
+kind: CronJob
+apiVersion: batch/v1
+
+metadata:
+  name: test
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: test
+              image: test:latest
+              env:
+                - name: BAR
+                  value: "43"
